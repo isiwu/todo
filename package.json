@@ -1,0 +1,35 @@
+{
+  "name": "todo",
+  "version": "0.0.0",
+  "private": true,
+  "engines": {
+    "node": "16.13.0"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "scripts": {
+    "transpile": "babel ./server --out-dir dist-server",
+    "server": "node ./dist-server/bin/www",
+    "clean": "rimraf dist-server",
+    "build": "npm-run-all clean transpile",
+    "start": "npm-run-all build server"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.18.6",
+    "@babel/core": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
+    "cookie-parser": "~1.4.4",
+    "core-js": "^3.23.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "morgan": "~1.9.1",
+    "npm-run-all": "^4.1.5",
+    "regenerator-runtime": "^0.13.9",
+    "rimraf": "^3.0.2",
+    "sequelize": "^6.21.2",
+    "sqlite3": "^5.0.8"
+  }
+}
